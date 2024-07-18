@@ -1,1 +1,5 @@
 # Amazon-Reviews
+
+İncelenen bazı kavramlar arasında konu modellemesi (benzer metinlerin konuya göre gruplanması), adlandırılmış varlık tanıma (NER) (isimlerin yer veya zaman gibi etiketlerle tanımlanması) ve bağımlılık ağaçları (söz dizimi etiketleri ve cümle yapısının belirlenmesi) yer almaktadır. Word2Vec aşaması nihai modelde merkezi bir rol oynasa da, ön işleme adımları da en az onun kadar önemliydi. Tokenizasyondan önce, her belge UTF'den ASCII'ye kodlandı, küçük harfe dönüştürüldü, aksanlar, durak kelimeleri ve noktalama işaretleri kaldırıldı ve fazla boşluklar silindi. Kelimeler köklerine indirgenerek kelime hazinesi mümkün olduğunca sadeleştirildi. Sık kullanılan tokenler de ifade modelleme ile tekilleştirildi.
+
+Model kelime kullanımının ötesinde bağlamı da çıkarır ve miktarlandırır. İncelemelerdeki her bir kelime, komşu kelimeleri tarafından anlaşılır ve belirli boyutlarda gömülür. Kelimenin diğer kelimelerle olan tüm etkileşimleri vektörlerle ifade edilir ve her incelemedeki tüm kelimeler, 100 özelliği oluşturmak için ortalamaya alınır. Böylece bir incelemenin özü nihai veri çerçevesini oluşturur.
